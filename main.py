@@ -7,8 +7,8 @@ import socket
 import struct
 import time
 import os
-import urllib.parse
 import json 
+import urllib.parse
 
 def login(account, password):
     PHONE_PATTERN = r"(^(1)\d{10}$)"
