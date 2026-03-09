@@ -124,7 +124,7 @@ def change_steps(account, user_id, app_token, steps):
     }
     data = {
         "userid": user_id,
-        "last_sync_data_time": seconds,
+        "last_sync_data_time": sec_timestamp,
         "device_type": 0,
         "last_deviceid": deviceID,
         "data_json": json.dumps([dataJSON]) 
@@ -141,7 +141,8 @@ def change_steps(account, user_id, app_token, steps):
         "apptoken": app_token,
     }
     url0 = f"https://api-mifit-cn.huami.com/v1/data/band_data.json?&t={sec_timestamp}"
-    data0 = f"userid={user_id}&last_sync_data_time={sec_timestamp}&device_type=0&last_deviceid={deviceID}&data_json={dataJSON}"
+    #data0 = f"userid={user_id}&last_sync_data_time={sec_timestamp}&device_type=0&last_deviceid={deviceID}&data_json={dataJSON}"
+    data0 = data
     
     try:
         res0 = requests.post(url0, data=data0, headers=headers0)
